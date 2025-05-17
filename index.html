@@ -18,33 +18,21 @@
       overflow: hidden;
       text-align: center;
     }
-  .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.side-image {
-  width: 100px;
-  height: auto;
-  border-radius: 10px;
-}
-
-.left-img {
-  order: 1;
-}
-
-.content {
-  order: 2;
-  text-align: center;
-}
-
-.right-img {
-  order: 3;
-}
-
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .side-image {
+      width: 100px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .left-img { order: 1; }
+    .content { order: 2; text-align: center; }
+    .right-img { order: 3; }
     #popup, #response {
       background-color: #220033;
       border: 2px solid #9900cc;
@@ -53,7 +41,6 @@
       box-shadow: 0 0 20px #660066;
       max-width: 90%;
     }
-
     input, button {
       margin-top: 15px;
       padding: 10px;
@@ -62,42 +49,55 @@
       border: none;
       font-size: 1em;
     }
-
     button {
       background-color: #9900cc;
       color: white;
       cursor: pointer;
     }
-
     button:hover {
       background-color: #cc00ff;
     }
-
     img {
       margin-top: 15px;
       max-width: 100%;
       border-radius: 10px;
       box-shadow: 0 0 10px #333;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
-  <body>
-  <div class="container">
+<body>
+  <!-- Input Slide -->
+  <div class="container" id="inputSlide">
     <img src="WhatsApp Image 2025-05-17 at 21.18.00_93ef1007.jpg" class="side-image left-img" alt="left themed image" />
-    
     <div class="content">
       <h1>Troubled again my batman?</h1>
       <label for="grievance">lets fix me up:</label>
       <input type="text" id="grievance" placeholder="share your sorrows my love" />
       <button onclick="showResponse()">Submit</button>
     </div>
-    
     <img src="WhatsApp Image 2025-05-17 at 21.18.00_bca56594.jpg" class="side-image right-img" alt="right themed image" />
   </div>
 
+  <!-- Response Slide -->
   <div id="response" class="hidden">
     <img src="download (6).jpeg" alt="Catwoman" />
     <p>Sorry for the inconvenience kuchupuchu, might happen again, await your next visit here. &lt;3</p>
+    <!-- Uncomment below to show the user's input -->
+    <!-- <p>Your sorrow: <span id="userGrievance"></span></p> -->
   </div>
+
+  <script>
+    function showResponse() {
+      // Optionally, get the user's input and display it
+      // const grievance = document.getElementById('grievance').value;
+      // document.getElementById('userGrievance').textContent = grievance;
+
+      document.getElementById('inputSlide').classList.add('hidden');
+      document.getElementById('response').classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
