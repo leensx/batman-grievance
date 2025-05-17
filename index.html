@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bat-Grievance Portal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a0033, #000033);
+      color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    #popup, #response {
+      background-color: #220033;
+      border: 2px solid #9900cc;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #660066;
+      max-width: 90%;
+    }
+
+    input, button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 80%;
+      border-radius: 10px;
+      border: none;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: #9900cc;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #cc00ff;
+    }
+
+    img {
+      margin-top: 15px;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="popup">
+    <h2>What's your grievance?</h2>
+    <input type="text" id="grievance" placeholder="Type here..." />
+    <button onclick="showResponse()">Submit</button>
+  </div>
+
+  <div id="response" style="display:none;">
+    <h3>Sorry for the inconvenience kuchupuchu, might happen again,<br>await your next visit here. <3</h3>
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/65/Catwoman_DC_Comics.png" alt="Catwoman">
+  </div>
+
+  <script>
+    function showResponse() {
+      const input = document.getElementById("grievance").value;
+      if (input.trim() === "") {
+        alert("Please share your grievance first!");
+        return;
+      }
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("response").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
