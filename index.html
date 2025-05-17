@@ -18,6 +18,32 @@
       overflow: hidden;
       text-align: center;
     }
+  .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.side-image {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.left-img {
+  order: 1;
+}
+
+.content {
+  order: 2;
+  text-align: center;
+}
+
+.right-img {
+  order: 3;
+}
 
     #popup, #response {
       background-color: #220033;
@@ -55,30 +81,23 @@
     }
   </style>
 </head>
-<body>
-
-  <div id="popup">
-    <h2>What may have troubled my batman?</h2>
-    <input type="text" id="grievance" placeholder="Type here..." />
-    <button onclick="showResponse()">Submit</button>
+  <body>
+  <div class="container">
+    <img src="WhatsApp Image 2025-05-17 at 21.18.00_93ef1007.jpg" class="side-image left-img" alt="left themed image" />
+    
+    <div class="content">
+      <h1>Welcome to the Grievance Portal</h1>
+      <label for="grievance">Enter your grievance:</label>
+      <input type="text" id="grievance" placeholder="Tell me what's wrong..." />
+      <button onclick="showResponse()">Submit</button>
+    </div>
+    
+    <img src="WhatsApp Image 2025-05-17 at 21.18.00_bca56594.jpg" class="side-image right-img" alt="right themed image" />
   </div>
 
-  <div id="response" style="display:none;">
-    <h3>Sorry for the inconvenience kuchupuchu, might happen again,<br>await your next visit here. <3</h3>
-    <img src="https://upload.wikimedia.org/wikipedia/en/6/65/Catwoman_DC_Comics.png" alt="Catwoman">
+  <div id="response" class="hidden">
+    <img src="catwoman.png" alt="Catwoman" />
+    <p>Sorry for the inconvenience kuchupuchu, might happen again, await your next visit here. &lt;3</p>
   </div>
-
-  <script>
-    function showResponse() {
-      const input = document.getElementById("grievance").value;
-      if (input.trim() === "") {
-        alert("Please share your grievance first!");
-        return;
-      }
-      document.getElementById("popup").style.display = "none";
-      document.getElementById("response").style.display = "block";
-    }
-  </script>
-
 </body>
 </html>
